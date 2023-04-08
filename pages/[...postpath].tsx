@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 	if (referringURL?.includes('facebook.com') || fbclid) {
 		return {
 			redirect: {
-				permanent: false,
+				permanent: true,
 				destination: `${
 					endpoint.replace(/(\/graphql\/)/, '/') + encodeURI(path as string)
 				}`,
